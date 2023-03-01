@@ -1,0 +1,28 @@
+﻿@page "/TIcketDetails/{Id:int}"
+@inherits TicketDetailsBase
+
+@if (Ticket == null && ErrorMessage == null)
+{
+    <DisplaySpinner/> 
+}
+else if (ErrorMessage != null)
+{
+    <DisplayError ErrorMessage="@ErrorMessage"></DisplayError>
+}
+else
+{
+    <h3 class="mb-5">Movie Details</h3>
+    <div class="row">
+       
+        <div class="col-md-6">
+            <h3>@Ticket.Code</h3>
+            <p class="mb-4">@Ticket.RowNumber</p>
+            <p class="mb-4">@Ticket.SeatNumber        
+            </p>
+            <div>
+              
+            </div>
+        </div>
+
+    </div>
+}
